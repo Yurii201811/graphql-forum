@@ -1,5 +1,5 @@
 {
-  "name": "graphql-forum",
+  "name": "@marcus.beauregard/graphql-forum",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": { "start": "node index.js" },
