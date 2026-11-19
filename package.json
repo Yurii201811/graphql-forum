@@ -2,6 +2,14 @@
   "name": "@marcus.beauregard/graphql-forum",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": { "start": "node index.js", "test": "node --test" },
-  "dependencies": { "apollo-server": "^3.10.0", "graphql": "^16.6.0", "dataloader": "^2.1.0" }
+  "scripts": {
+    "start": "node index.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "apollo-server": "^3.10.0",
+    "graphql": "^16.6.0",
+    "dataloader": "^2.1.0"
+  },
+  "license": "GPL-2.0-or-later"
 }
