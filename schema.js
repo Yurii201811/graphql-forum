@@ -26,8 +26,10 @@ const resolvers = {
     author: (c) => users.find((u) => u.id === c.authorId),
   },
   Mutation: {
-    createPost: (_, { title, body }) => {
-      const post = { id: String(posts.length + 1), title, body, authorId: '1' };
+    createPost: (_, { title, body, authorId = '1' }) => {
+      const author = users.find((u) => u.id === authorId);
+      if (!author) throw new UserInputError(`No user with id "${authorId}"`);
+      const post = { id: String(posts.length + 1), title, body, authorId: author.id };
       posts.push(post);
       return post;
     },

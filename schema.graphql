@@ -20,6 +20,6 @@ type Query {
   users: [User!]!
 }
 type Mutation {
-  createPost(title: String!, body: String!): Post!
+  createPost(title: String!, body: String!, authorId: ID): Post!
   addComment(postId: ID!, body: String!): Comment!
 }

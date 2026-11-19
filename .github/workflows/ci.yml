@@ -9,3 +9,5 @@ jobs:
         with:
           node-version: 20
       - run: node --check index.js
+      - run: npm install --no-audit --no-fund
+      - run: npm test
