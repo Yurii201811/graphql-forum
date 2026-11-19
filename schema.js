@@ -1,4 +1,6 @@
 const fs = require('fs');
+const { UserInputError } = require('apollo-server');
+
 const typeDefs = fs.readFileSync('./schema.graphql', 'utf8');
 
 const users = [
@@ -30,7 +32,9 @@ const resolvers = {
       return post;
     },
     addComment: (_, { postId, body }) => {
-      const c = { id: String(comments.length + 1), body, postId, authorId: '2' };
+      const post = posts.find((p) => p.id === postId);
+      if (!post) throw new UserInputError(`No post with id "${postId}"`);
+      const c = { id: String(comments.length + 1), body, postId: post.id, authorId: '2' };
       comments.push(c);
       return c;
     },
